@@ -1,15 +1,6 @@
-const products = [
-  { id: 1, name: "Tak met bladeren", price: 12.50, emoji: "🌿" },
-  { id: 2, name: "Cactus", price: 5.00, emoji: "🌵" },
-  { id: 3, name: "Roze Bloem", price: 9.95, emoji: "🌸" },
-  { id: 4, name: "Plant met Pot", price: 4.502112322, emoji: "🪴" },
-  { id: 5, name: "Bamboe", price: 7.95, emoji: "🎋" },
-  { id: 6, name: "Zonnebloem", price: 3.50, emoji: "🌻" }
-];
-
 let cart = [];
 
-function renderProducts() {
+function renderProducts(products) {
   const container = document.getElementById("products");
   products.forEach(product => {
     const card = document.createElement("div");
@@ -25,7 +16,7 @@ function renderProducts() {
 }
 
 function addToCart(id) {
-  const product = products.find(p => p.id === id);
+  const product = window.productsData.find(p => p.id === id);
   const existing = cart.find(item => item.id === id);
   if (existing) {
     existing.quantity++;
@@ -67,4 +58,9 @@ document.getElementById("checkout-btn").addEventListener("click", () => {
   renderCart();
 });
 
-renderProducts();
+fetch("products.json")
+  .then(response => response.json())
+  .then(products => {
+    window.productsData = products;
+    renderProducts(products);
+  });

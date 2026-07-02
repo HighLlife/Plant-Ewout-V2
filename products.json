@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Tak met bladeren", "price": 12.50, "emoji": "🌿" },
+  { "id": 2, "name": "Cactus", "price": 5.00, "emoji": "🌵" },
+  { "id": 3, "name": "Roze Bloem", "price": 9.95, "emoji": "🌸" },
+  { "id": 4, "name": "Plant met Pot", "price": 4.50, "emoji": "🪴" },
+  { "id": 5, "name": "Bamboe", "price": 7.95, "emoji": "🎋" },
+  { "id": 6, "name": "Zonnebloem", "price": 3.50, "emoji": "🌻" }
+]
